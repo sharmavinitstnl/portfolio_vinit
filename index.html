@@ -4,220 +4,248 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinit Sharma - Portfolio</title>
-    <!-- Tailwind CSS CDN for modern styling -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter for a clean, modern typeface -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Poppins for a modern, professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom CSS for body background and animations */
+        /* Enhanced body styling */
         body {
-            /* A dynamic radial gradient background with subtle animation */
-            background: radial-gradient(circle at top left, #1a202c, #2d3748, #1a202c);
-            background-size: 400% 400%; /* Larger background for animation effect */
-            animation: gradientAnimation 15s ease infinite; /* Slow, subtle animation */
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background-attachment: fixed;
             min-height: 100vh;
-            font-family: 'Inter', sans-serif;
-            color: #e2e8f0; /* Lighter text for dark background */
+            font-family: 'Poppins', sans-serif;
+            color: #f1f5f9;
+            overflow-x: hidden;
         }
-        /* Keyframes for the background gradient animation */
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        /* Fade-in animation for sections */
+        /* Smooth fade-in animation */
         .section {
-            animation: fadeIn 0.8s ease-out forwards; /* Slightly faster and more direct */
-            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
         }
-        /* Keyframes for the fade-in animation */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Hover scale effect for cards and interactive elements */
+        /* Enhanced hover effects */
         .hover-scale-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
         }
         .hover-scale-card:hover {
-            transform: translateY(-5px); /* Lift effect */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            background-color: #334155;
         }
-        /* Custom button styling for download resume - more advanced aesthetics */
+        /* Advanced button styling */
         .download-btn {
-            background: linear-gradient(to right, #6366f1, #8b5cf6); /* Indigo to Violet gradient */
-            transition: all 0.4s ease-in-out; /* Smoother transition */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow */
-            border: 2px solid #a78bfa; /* Subtle border for definition */
+            background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+            border: 2px solid transparent;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
         .download-btn:hover {
-            background: linear-gradient(to right, #8b5cf6, #6366f1); /* Reverse gradient on hover */
-            transform: translateY(-3px) scale(1.02); /* More pronounced lift and slight scale */
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* Even deeper shadow on hover */
+            background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 100%);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border-color: #a5b4fc;
         }
-        /* Custom scrollbar for a cleaner look */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
         ::-webkit-scrollbar-track {
             background: #1e293b;
         }
         ::-webkit-scrollbar-thumb {
-            background: #34d399;
-            border-radius: 10px;
+            background: linear-gradient(180deg, #22d3ee, #06b6d4);
+            border-radius: 12px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #10b981;
+            background: linear-gradient(180deg, #06b6d4, #22d3ee);
+        }
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Navigation link hover effect */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #22d3ee;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
         }
     </style>
 </head>
 <body class="antialiased">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-slate-900/95 backdrop-blur-md shadow-lg z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-cyan-400">Vinit Sharma</a>
+            <div class="space-x-6">
+                <a href="#summary" class="nav-link text-slate-300 hover:text-cyan-400">Summary</a>
+                <a href="#education" class="nav-link text-slate-300 hover:text-cyan-400">Education</a>
+                <a href="#skills" class="nav-link text-slate-300 hover:text-cyan-400">Skills</a>
+                <a href="#projects" class="nav-link text-slate-300 hover:text-cyan-400">Projects</a>
+                <a href="#trainings" class="nav-link text-slate-300 hover:text-cyan-400">Trainings</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Header Section -->
-    <header class="text-white text-center py-16 px-4 bg-gradient-to-r from-blue-900 to-indigo-900 shadow-xl rounded-b-3xl">
+    <header class="text-white text-center pt-24 pb-16 px-4 bg-gradient-to-br from-indigo-900 via-slate-800 to-cyan-900 shadow-2xl">
         <div class="container mx-auto">
-            <!-- Profile Picture Placeholder (optional, uncomment and replace with actual image) -->
-            <!-- <img src="https://placehold.co/120x120/34d399/ffffff?text=VS" alt="Vinit Sharma" class="rounded-full mx-auto mb-6 border-4 border-green-400 shadow-lg"> -->
-            <h1 class="text-6xl font-extrabold mb-3 leading-tight">Vinit Sharma</h1>
-            <p class="text-2xl font-light text-blue-200 mb-6">Electronics & Communication Engineering Student | Embedded Systems & IoT Enthusiast</p>
-            <div class="mt-6 flex justify-center gap-6 flex-wrap text-lg">
-                <a href="mailto:sharmavinitshil@gmail.com" class="text-blue-300 hover:text-white transition duration-300 ease-in-out flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                    sharmavinitstnl@gmail.com
+            <!-- Profile Picture Placeholder -->
+            <!-- <img src="https://placehold.co/150x150/22d3ee/ffffff?text=VS" alt="Vinit Sharma" class="rounded-full mx-auto mb-6 border-4 border-cyan-400 shadow-xl"> -->
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-400">Vinit Sharma</h1>
+            <p class="text-xl md:text-2xl font-light text-cyan-200 mb-8">Electronics & Communication Engineering | Embedded Systems & IoT Innovator</p>
+            <div class="mt-6 flex justify-center gap-8 flex-wrap text-lg">
+                <a href="mailto:sharmavinitshil@gmail.com" class="nav-link text-cyan-300 hover:text-white flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                    sharmavinitshil@gmail.com
                 </a>
-                <span class="text-blue-400">|</span>
-                <a href="https://linkedin.com/in/sharmavinitstnl" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-white transition duration-300 ease-in-out flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"></path><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM20 19h-3v-5.62c0-1.01-.02-2.31-1.41-2.31-1.41 0-1.63 1.1-1.63 2.24V19h-3V8h3v1.76h.04c.2-.36.68-.73 1.68-.73 1.8 0 3.19 1.18 3.19 3.64V19z"></path></svg>
+                <a href="https://linkedin.com/in/sharmavinitstnl" target="_blank" rel="noopener noreferrer" class="nav-link text-cyan-300 hover:text-white flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM20 19h-3v-5.62c0-1.01-.02-2.31-1.41-2.31-1.41 0-1.63 1.1-1.63 2.24V19h-3V8h3v1.76h.04c.2-.36.68-.73 1.68-.73 1.8 0 3.19 1.18 3.19 3.64V19z"></path></svg>
                     LinkedIn
                 </a>
-                <span class="text-blue-400">|</span>
-                <a href="Vinit_ECE_Resume.pdf" download class="download-btn text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L10 11.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v7a1 1 0 11-2 0V4a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                <a href="Vinit_ECE_Resume.pdf" download class="download-btn text-white px-8 py-3 rounded-full font-semibold flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L10 11.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v7a1 1 0 11-2 0V4a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                     Download Resume
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-12">
+    <main class="container mx-auto px-4 py-16">
         <!-- Professional Summary Section -->
-        <section class="section bg-slate-800/80 text-white p-8 rounded-xl shadow-2xl mb-12 hover-scale-card">
-            <h2 class="text-4xl font-bold text-green-400 mb-6 border-b-2 border-green-500 pb-3">Professional Summary</h2>
-            <p class="text-lg leading-relaxed text-slate-300">
-                B.Tech Electronics & Communication Engineering student with project-based experience in embedded systems and IoT using ESP8266/ESP32. Proficient in microcontroller programming (AVR, PIC, ARM), PCB layout, and circuit simulation. Completed multiple automation and monitoring systems using Blynk, Adafruit, Google Firebase and ThinkSpeak. Seeking an opportunity to build embedded systems or IoT development to apply hands-on skills in microcontroller integration and real-time data processing.
+        <section id="summary" class="section bg-slate-800/90 text-white p-10 rounded-2xl shadow-2xl mb-12 hover-scale-card">
+            <h2 class="text-4xl font-bold text-cyan-400 mb-6 border-b-2 border-cyan-500 pb-3">Professional Summary</h2>
+            <p class="text-lg leading-relaxed text-slate-200">
+                Dedicated B.Tech Electronics & Communication Engineering student with hands-on expertise in embedded systems and IoT, leveraging ESP8266/ESP32 platforms. Skilled in microcontroller programming (AVR, PIC, ARM), PCB design, and circuit simulation. Successfully delivered automation and monitoring solutions using Blynk, Adafruit, Google Firebase, and ThingSpeak. Eager to contribute to innovative embedded systems and IoT projects, applying proficiency in real-time data processing and system integration.
             </p>
         </section>
 
         <!-- Education Section -->
-        <section class="section bg-slate-800/80 text-white p-8 rounded-xl shadow-2xl mb-12 hover-scale-card">
-            <h2 class="text-4xl font-bold text-green-400 mb-6 border-b-2 border-green-500 pb-3">Education</h2>
-            <div class="space-y-8">
-                <div class="border-l-4 border-green-500 pl-4">
+        <section id="education" class="section bg-slate-800/90 text-white p-10 rounded-2xl shadow-2xl mb-12 hover-scale-card">
+            <h2 class="text-4xl font-bold text-cyan-400 mb-6 border-b-2 border-cyan-500 pb-3">Education</h2>
+            <div class="space-y-10">
+                <div class="border-l-4 border-cyan-500 pl-6">
                     <h3 class="text-2xl font-semibold text-white">B.Tech in Electronics & Communication Engineering</h3>
-                    <p class="text-slate-300">Guru Jambheshwar University of Science & Technology, Hisar | Expected Graduation: 2026</p>
+                    <p class="text-slate-200">Guru Jambheshwar University of Science & Technology, Hisar | Expected 2026</p>
                 </div>
-                <div class="border-l-4 border-green-500 pl-4">
+                <div class="border-l-4 border-cyan-500 pl-6">
                     <h3 class="text-2xl font-semibold text-white">HS-CIT Certification in Information Technology</h3>
-                    <p class="text-slate-300">Haryana Board of Secondary Education, Bhiwani | Awarded: July 2019 | Score: 91.15%</p>
+                    <p class="text-slate-200">Haryana Board of Secondary Education, Bhiwani | 2019 | 91.15%</p>
                 </div>
-                <div class="border-l-4 border-green-500 pl-4">
+                <div class="border-l-4 border-cyan-500 pl-6">
                     <h3 class="text-2xl font-semibold text-white">Class 12th CBSE</h3>
-                    <p class="text-slate-300">Motessori Convent Sr. Sec. School, Satnali | 2020-2021</p>
+                    <p class="text-slate-200">Montessori Convent Sr. Sec. School, Satnali | 2020-2021</p>
                 </div>
-                <div class="border-l-4 border-green-500 pl-4">
-                    <h3 class="text-2xl font-semibold text-white">Class 10th CBSE</h3>
-                    <p class="text-slate-300">Montessori Convent Sr. Sec. School, Satnali | 2018-2019</p>
+                <div class="border-l-4 border-cyan-500 pl-6">
+                    <h3 class="text-2xl font-semibold text-white">Class 10th CBSE</h3n>
+                    <p class="text-slate-200">Montessori Convent Sr. Sec. School, Satnali | 2018-2019</p>
                 </div>
             </div>
         </section>
 
         <!-- Technical Skills Section -->
-        <section class="section bg-slate-800/80 text-white p-8 rounded-xl shadow-2xl mb-12 hover-scale-card">
-            <h2 class="text-4xl font-bold text-green-400 mb-6 border-b-2 border-green-500 pb-3">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section id="skills" class="section bg-slate-800/90 text-white p-10 rounded-2xl shadow-2xl mb-12 hover-scale-card">
+            <h2 class="text-4xl font-bold text-cyan-400 mb-6 border-b-2 border-cyan-500 pb-3">Technical Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-semibold text-green-300 mb-2">Programming</h3>
-                    <p class="text-slate-300">C, Embedded C, Assembly, Verilog</p>
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Programming</h3>
+                    <p class="text-slate-200">C, Embedded C, Assembly, Verilog</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-green-300 mb-2">Microcontrollers</h3>
-                    <p class="text-slate-300">Arduino UNO, ATmega8, ESP8266, ESP32, PIC16F877A, ARM Cortex M4, ARM7</p>
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Microcontrollers</h3>
+                    <p class="text-slate-200">Arduino UNO, ATmega8, ESP8266, ESP32, PIC16F877A, ARM Cortex M4, ARM7</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-green-300 mb-2">Tools & IDEs</h3>
-                    <p class="text-slate-300">MPLAB X, Arduino IDE, Proteus, LTSpice, ExpressPCB, Keil, PSPice, Visual Studio</p>
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Tools & IDEs</h3>
+                    <p class="text-slate-200">MPLAB X, Arduino IDE, Proteus, LTSpice, ExpressPCB, Keil, PSPice, Visual Studio</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-green-300 mb-2">Concepts</h3>
-                    <p class="text-slate-300">Embedded Systems, IoT, PCB Design, Circuit Design, Signal Processing, UART, SPI, I2C</p>
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Concepts</h3>
+                    <p class="text-slate-200">Embedded Systems, IoT, PCB Design, Circuit Design, Signal Processing, UART, SPI, I2C</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-green-300 mb-2">Soft Skills</h3>
-                    <p class="text-slate-300">Technical presentation, Teamwork, Documentation</p>
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Soft Skills</h3>
+                    <p class="text-slate-200">Technical Presentation, Team Collaboration, Documentation</p>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section class="section bg-slate-800/80 text-white p-8 rounded-xl shadow-2xl mb-12">
-            <h2 class="text-4xl font-bold text-green-400 mb-6 border-b-2 border-green-500 pb-3">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-slate-700/70 p-6 rounded-lg shadow-md hover-scale-card">
-                    <h3 class="text-2xl font-semibold text-green-300 mb-2">Home Automation System using ESP8266 & Blynk</h3>
-                    <p class="text-slate-300">Modeled a Wi-Fi-based automation system to control 4 household appliances via smartphone using Blynk app and ESP8266 module using Arduino IDE. Built a real-time temperature logger using DHT11 sensor and ThinkSpeak, updating data every 15 seconds for continuous monitoring.</p>
+        <section id="projects" class="section bg-slate-800/90 text-white p-10 rounded-2xl shadow-2xl mb-12">
+            <h2 class="text-4xl font-bold text-cyan-400 mb-6 border-b-2 border-cyan-500 pb-3">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-700/70 p-6 rounded-xl shadow-lg hover-scale-card">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Home Automation System</h3>
+                    <p class="text-slate-200">Developed a Wi-Fi-based system to control four appliances via the Blynk app using ESP8266. Integrated DHT11 sensor for real-time temperature logging on ThingSpeak, updating every 15 seconds.</p>
                 </div>
-                <div class="bg-slate-700/70 p-6 rounded-lg shadow-md hover-scale-card">
-                    <h3 class="text-2xl font-semibold text-green-300 mb-2">UART Communication Between Two ESP8266 Modules</h3>
-                    <p class="text-slate-300">Implemented reliable UART communication with 9600 baud rate between 2 ESP8266 modules to exchange sensor data with a 3.5% packet loss.</p>
+                <div class="bg-slate-700/70 p-6 rounded-xl shadow-lg hover-scale-card">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">UART Communication</h3>
+                    <p class="text-slate-200">Established UART communication at 9600 baud rate between two ESP8266 modules for sensor data exchange with 3.5% packet loss.</p>
                 </div>
-                <div class="bg-slate-700/70 p-6 rounded-lg shadow-md hover-scale-card">
-                    <h3 class="text-2xl font-semibold text-green-300 mb-2">Weather Monitoring with Arduino Uno</h3>
-                    <p class="text-slate-300">Integrated 3 environmental sensors (DHT11, LDR, BMP180) to display temperature, light, and pressure with ±2°C accuracy.</p>
+                <div class="bg-slate-700/70 p-6 rounded-xl shadow-lg hover-scale-card">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Weather Monitoring System</h3>
+                    <p class="text-slate-200">Integrated DHT11, LDR, and BMP180 sensors with Arduino Uno to monitor temperature, light, and pressure with ±2°C accuracy.</p>
                 </div>
-                <div class="bg-slate-700/70 p-6 rounded-lg shadow-md hover-scale-card">
-                    <h3 class="text-2xl font-semibold text-green-300 mb-2">RFID Based Automatic Attendance System with PLX-DAQ</h3>
-                    <p class="text-slate-300">Logged attendance of 304 users automatically using RFID module and PLX-DAQ Excel interfacing.</p>
+                <div class="bg-slate-700/70 p-6 rounded-xl shadow-lg hover-scale-card">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">RFID Attendance System</h3>
+                    <p class="text-slate-200">Automated attendance logging for 304 users using RFID and PLX-DAQ Excel interfacing.</p>
                 </div>
-                <div class="bg-slate-700/70 p-6 rounded-lg shadow-md hover-scale-card">
-                    <h3 class="text-2xl font-semibold text-green-300 mb-2">AC to DC Power Supply - PCB Design</h3>
-                    <p class="text-slate-300">Simulated and built an AC to DC converter circuit in Proteus with final PCB layout ready for fabrication.</p>
+                <div class="bg-slate-700/70 p-6 rounded-xl shadow-lg hover-scale-card">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">AC to DC Power Supply</h3>
+                    <p class="text-slate-200">Designed and simulated an AC to DC converter circuit in Proteus, with PCB layout ready for fabrication.</p>
                 </div>
-                <div class="bg-slate-700/70 p-6 rounded-lg shadow-md hover-scale-card">
-                    <h3 class="text-2xl font-semibold text-green-300 mb-2">Audio Amplifier Using BC547 - PCB Implementation</h3>
-                    <p class="text-slate-300">Engineered a single-stage audio amplifier circuit (gain=100x) and fabricated a 5x5 cm PCB layout.</p>
+                <div class="bg-slate-700/70 p-6 rounded-xl shadow-lg hover-scale-card">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Audio Amplifier</h3>
+                    <p class="text-slate-200">Built a single-stage audio amplifier (gain=100x) using BC547, with a 5x5 cm PCB layout.</p>
                 </div>
-                <div class="bg-slate-700/70 p-6 rounded-lg shadow-md hover-scale-card">
-                    <h3 class="text-2xl font-semibold text-green-300 mb-2">4-bit Multiplier in CMOS Logic using LTspice</h3>
-                    <p class="text-slate-300">Simulated 4-bit binary multiplier circuit using CMOS logic gates with correct outputs verified for all 16 combinations.</p>
+                <div class="bg-slate-700/70 p-6 rounded-xl shadow-lg hover-scale-card">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">4-bit CMOS Multiplier</h3>
+                    <p class="text-slate-200">Simulated a 4-bit binary multiplier using CMOS logic gates in LTspice, verified for all 16 combinations.</p>
                 </div>
             </div>
         </section>
 
         <!-- Trainings Section -->
-        <section class="section bg-slate-800/80 text-white p-8 rounded-xl shadow-2xl mb-12 hover-scale-card">
-            <h2 class="text-4xl font-bold text-green-400 mb-6 border-b-2 border-green-500 pb-3">Trainings</h2>
-            <div class="space-y-8">
-                <div class="border-l-4 border-green-500 pl-4">
-                    <h3 class="text-2xl font-semibold text-white">Embedded System Design with ATmega8</h3>
-                    <p class="text-slate-300">Soffron India Pvt. Ltd, New Delhi | Jan-Aug 2024</p>
-                    <p class="text-slate-300 mt-1">Hands-on training in ATmega8 programming, peripheral interfacing, timers, and interrupts using Proteus and MPLAB X IDE.</p>
+        <section id="trainings" class="section bg-slate-800/90 text-white p-10 rounded-2xl shadow-2xl mb-12 hover-scale-card">
+            <h2 class="text-4xl font-bold text-cyan-400 mb-6 border-b-2 border-cyan-500 pb-3">Trainings</h2>
+            <div class="space-y-10">
+                <div class="border-l-4 border-cyan-500 pl-6">
+                    <h3 class="text-2xl font-semibold text-white">Embedded System Design</h3>
+                    <p class="text-slate-200">Soffron India Pvt. Ltd, New Delhi | Jan-Aug 2024</p>
+                    <p class="text-slate-200 mt-2">Mastered ATmega8 programming, peripheral interfacing, and timers using Proteus and MPLAB X IDE.</p>
                 </div>
-                <div class="border-l-4 border-green-500 pl-4">
-                    <h3 class="text-2xl font-semibold text-white">Arduino and Arduino IDE</h3>
-                    <p class="text-slate-300">Internshala Trainings | Feb-Mar 2024</p>
-                    <p class="text-slate-300 mt-1">Learned embedded programming and real-time control using Arduino. Completed multiple automation-based tasks.</p>
+                <div class="border-l-4 border-cyan-500 pl-6">
+                    <h3 class="text-2xl font-semibold text-white">Arduino Programming</h3>
+                    <p class="text-slate-200">Internshala Trainings | Feb-Mar 2024</p>
+                    <p class="text-slate-200 mt-2">Developed skills in embedded programming and automation using Arduino IDE.</p>
                 </div>
-                <div class="border-l-4 border-green-500 pl-4">
+                <div class="border-l-4 border-cyan-500 pl-6">
                     <h3 class="text-2xl font-semibold text-white">Embedded Systems Fundamentals</h3>
-                    <p class="text-slate-300">Pantech AI, Online | Mar-Apr 2024</p>
-                    <p class="text-slate-300 mt-1">Explored system architecture, microcontroller interfacing, and applications using PIC, ARM Cortex-M4, ARM7, and ESP8266.</p>
+                    <p class="text-slate-200">Pantech AI, Online | Mar-Apr 2024</p>
+                    <p class="text-slate-200 mt-2">Explored microcontroller interfacing and applications using PIC, ARM Cortex-M4, ARM7, and ESP8266.</p>
                 </div>
             </div>
         </section>
 
         <!-- Certifications Section -->
-        <section class="section bg-slate-800/80 text-white p-8 rounded-xl shadow-2xl mb-12 hover-scale-card">
-            <h2 class="text-4xl font-bold text-green-400 mb-6 border-b-2 border-green-500 pb-3">Certifications</h2>
-            <ul class="list-disc list-inside text-lg text-slate-300 space-y-2 pl-4">
+        <section class="section bg-slate-800/90 text-white p-10 rounded-2xl shadow-2xl mb-12 hover-scale-card">
+            <h2 class="text-4xl font-bold text-cyan-400 mb-6 border-b-2 border-cyan-500 pb-3">Certifications</h2>
+            <ul class="list-disc list-inside text-lg text-slate-200 space-y-3 pl-6">
                 <li>HS-CIT (Haryana State Certificate in Information Technology)</li>
                 <li>Embedded System Design (Soffron India Pvt. Ltd)</li>
                 <li>Embedded Systems (Pantech AI)</li>
@@ -226,12 +254,12 @@
         </section>
 
         <!-- Activities & Workshops Section -->
-        <section class="section bg-slate-800/80 text-white p-8 rounded-xl shadow-2xl mb-12 hover-scale-card">
-            <h2 class="text-4xl font-bold text-green-400 mb-6 border-b-2 border-green-500 pb-3">Activities & Workshops</h2>
-            <ul class="list-disc list-inside text-lg text-slate-300 space-y-2 pl-4">
+        <section class="section bg-slate-800/90 text-white p-10 rounded-2xl shadow-2xl mb-12 hover-scale-card">
+            <h2 class="text-4xl font-bold text-cyan-400 mb-6 border-b-2 border-cyan-500 pb-3">Activities & Workshops</h2>
+            <ul class="list-disc list-inside text-lg text-slate-200 space-y-3 pl-6">
                 <li>Project Exhibition Participant - GUJS&T, Sept 2024</li>
                 <li>Anti-Ragging Awareness Event Volunteer - GUJS&T, Oct 2024</li>
-                <li>Group Dance Performer, Swagatan 2024 (University Event) - GUJS&T, Oct 2024</li>
+                <li>Group Dance Performer, Swagatan 2024 - GUJS&T, Oct 2024</li>
                 <li>EV Workshop Participant - Ankdrkit, NIT Kurukshetra, Oct 2025</li>
                 <li>EV Workshop Participant - GUJS&T, March 2025</li>
                 <li>Founder & Manager - Paper Cirls (Educational Platform), Jul 2025</li>
@@ -239,44 +267,39 @@
         </section>
 
         <!-- Languages Section -->
-        <section class="section bg-slate-800/80 text-white p-8 rounded-xl shadow-2xl mb-12 hover-scale-card">
-            <h2 class="text-4xl font-bold text-green-400 mb-6 border-b-2 border-green-500 pb-3">Languages</h2>
-            <ul class="list-disc list-inside text-lg text-slate-300 space-y-2 pl-4">
+        <section class="section bg-slate-800/90 text-white p-10 rounded-2xl shadow-2xl mb-12 hover-scale-card">
+            <h2 class="text-4xl font-bold text-cyan-400 mb-6 border-b-2 border-cyan-500 pb-3">Languages</h2>
+            <ul class="list-disc list-inside text-lg text-slate-200 space-y-3 pl-6">
                 <li>Hindi: Native</li>
-                <li>English: Working Proficiency</li>
+                <li>English: Professional Working Proficiency</li>
             </ul>
         </section>
     </main>
 
     <!-- Footer Section -->
-    <footer class="text-center text-slate-400 py-8 px-4 bg-slate-900 rounded-t-3xl shadow-inner">
-        <p class="text-md">&copy; 2025 Vinit. All rights reserved.</p>
+    <footer class="text-center text-slate-400 py-10 px-4 bg-slate-900/95 shadow-inner">
+        <p class="text-md">© 2025 Vinit Sharma. All rights reserved.</p>
     </footer>
 
     <script>
-        // JavaScript to trigger fade-in animation for sections on scroll
+        // Enhanced scroll animation for sections
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('.section');
-
             const observerOptions = {
-                root: null, // relative to the viewport
+                root: null,
                 rootMargin: '0px',
-                threshold: 0.1 // Trigger when 10% of the section is visible
+                threshold: 0.15
             };
-
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target); // Stop observing once animated
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+            sections.forEach(section => observer.observe(section));
         });
     </script>
 </body>
