@@ -1,7 +1,5 @@
 # Vinit Sharma - Portfolio
 
-![Profile Banner](https://via.placeholder.com/1200x300/0f172a/22d3ee?text=Vinit+Sharma+-+Embedded+Systems+%26+IoT+Innovator) <!-- Replace with actual image if available -->
-
 Hi! I'm Vinit Sharma, a passionate B.Tech student in Electronics & Communication Engineering from Guru Jambheshwar University of Science & Technology (GJUS&T), Hisar. With hands-on experience in embedded systems and IoT, I specialize in microcontroller programming, PCB design, and real-time data processing. I'm eager to contribute to innovative projects in embedded systems and IoT development.
 
 **Contact Me:**  
